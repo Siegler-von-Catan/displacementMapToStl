@@ -17,6 +17,7 @@
 
 import bpy
 import sys
+import os
 
 # command line arguments
 # how to use: blender --background empty.blend --python displacementMapToStl.py -- <input_path> <output_path> (both absolute) 
@@ -25,7 +26,7 @@ argv = argv[argv.index("--") + 1:]  # get all args after "--"
 
 input_path = argv[0]
 output_path = argv[1]
-input_file = input_path.split("\\")[-1]
+input_file = os.path.basename(input_path)
 
 # add plane to world
 bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, location=(0, -17.85, 0), rotation=(1.5708, 0, 0))
