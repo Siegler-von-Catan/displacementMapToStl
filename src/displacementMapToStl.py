@@ -62,7 +62,7 @@ bpy.context.object.modifiers["CorrectiveSmooth"].iterations = 15
 
 # finally decrease face countwith decimate modifier
 bpy.ops.object.modifier_add(type='DECIMATE')
-bpy.context.object.modifiers["Decimate"].ratio = 0.015
+bpy.context.object.modifiers["Decimate"].ratio = 0.1
 
 # boolean substract on the wax stamp model of 
 
