@@ -68,8 +68,8 @@ bpy.context.object.modifiers["Decimate"].ratio = 0.1
 
 # import wax stamp model 
 # Wax stamp set (http://www.thingiverse.com/thing:3539505) by Cailem042 is licensed under the Creative Commons - Attribution - Share Alike license.
-#http://creativecommons.org/licenses/by-sa/3.0/
-bpy.ops.import_mesh.stl(filepath="..\\assets\\Wax_Stamp_Blank.stl")
+# http://creativecommons.org/licenses/by-sa/3.0/
+bpy.ops.import_mesh.stl(filepath=bpy.path.abspath("//../assets/Wax_Stamp_Blank.stl"))
 
 bpy.ops.object.modifier_add(type='BOOLEAN')
 bpy.context.object.modifiers["Boolean"].object = bpy.data.objects["Plane"]
