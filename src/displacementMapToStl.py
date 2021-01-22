@@ -29,7 +29,7 @@ output_path = argv[1]
 input_file = os.path.basename(input_path)
 
 # add plane to world
-bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, location=(0, -17.92, 0), rotation=(1.5708, 0, 0))
+bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, location=(0, -17.96, 0), rotation=(1.5708, 0, 0))
 
 # scale to fit into wax blank model
 bpy.ops.transform.resize(value=(7.53201, 7.53201, 7.53201), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, release_confirm=True)
@@ -51,14 +51,14 @@ bpy.ops.object.editmode_toggle()
 
 # add displacement modifier
 bpy.ops.object.modifier_add(type='DISPLACE')
-bpy.context.object.modifiers["Displace"].strength = -0.1875
+bpy.context.object.modifiers["Displace"].strength = -0.14
 bpy.context.object.modifiers["Displace"].mid_level = 0.445
 bpy.context.object.modifiers["Displace"].texture = texture
 
 # add smoothing
 bpy.ops.object.modifier_add(type='CORRECTIVE_SMOOTH')
-bpy.context.object.modifiers["CorrectiveSmooth"].factor = 1
-bpy.context.object.modifiers["CorrectiveSmooth"].iterations = 15
+bpy.context.object.modifiers["CorrectiveSmooth"].factor = 0.6
+bpy.context.object.modifiers["CorrectiveSmooth"].iterations = 8
 bpy.context.object.modifiers["CorrectiveSmooth"].use_pin_boundary = True
 
 # finally decrease face countwith decimate modifier
