@@ -57,13 +57,13 @@ bpy.context.object.modifiers["Displace"].texture = texture
 
 # add smoothing
 bpy.ops.object.modifier_add(type='CORRECTIVE_SMOOTH')
-bpy.context.object.modifiers["CorrectiveSmooth"].factor = 0.9
-bpy.context.object.modifiers["CorrectiveSmooth"].iterations = 12
+bpy.context.object.modifiers["CorrectiveSmooth"].factor = 0.8
+bpy.context.object.modifiers["CorrectiveSmooth"].iterations = 10
 bpy.context.object.modifiers["CorrectiveSmooth"].use_pin_boundary = True
 
 # finally decrease face countwith decimate modifier
 bpy.ops.object.modifier_add(type='DECIMATE')
-bpy.context.object.modifiers["Decimate"].ratio = 0.15
+bpy.context.object.modifiers["Decimate"].ratio = 0.3
 
 # boolean substract on the wax stamp model of 
 
