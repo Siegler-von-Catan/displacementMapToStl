@@ -2,7 +2,7 @@
 Transforms a displacement map / height map to a 3D model and applies it on a 3D stamp mocel provided as CC BY SA by Cailem042.
 
 ## Instruction:
-You need blender version >= 2.8 
+You need blender version >= 2.91 
 
 ## Usage
 Go to the directory "src" which contains the script and execute:

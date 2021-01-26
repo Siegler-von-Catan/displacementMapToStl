@@ -75,6 +75,7 @@ bpy.ops.import_mesh.stl(filepath=bpy.path.abspath("//../assets/Wax_Stamp_Blank.s
 bpy.ops.object.modifier_add(type='BOOLEAN')
 bpy.context.object.modifiers["Boolean"].object = bpy.data.objects["Plane"]
 bpy.context.object.modifiers["Boolean"].operation = "DIFFERENCE"
+bpy.context.object.modifiers["Boolean"].solver = 'FAST'
 bpy.ops.object.modifier_apply(modifier="Boolean")
 
 # save result
