@@ -33,7 +33,7 @@ def determineOutputPath(input_file, output_path):
 
 def addDisplacementModifier(texture):
     bpy.ops.object.modifier_add(type='DISPLACE')
-    bpy.context.object.modifiers["Displace"].strength = 0.14
+    bpy.context.object.modifiers["Displace"].strength = -0.14
     bpy.context.object.modifiers["Displace"].texture = texture
     bpy.context.object.modifiers["Displace"].mid_level = 0
     
@@ -77,7 +77,7 @@ output_path = determineOutputPath(input_file, argv[1])
 decimate_factor = 0.069 if len(argv) == 3 else 0.42
 
 # add plane to world
-bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, location=(0, -16.7, 0), rotation=(1.5708, 0, 0))
+bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, location=(0, -16.7, 0), rotation=(-1.5708, 3.1416, 0))
 
 # scale to fit into wax blank model
 bpy.ops.transform.resize(value=(8, 8, 8), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=True, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, release_confirm=True)
