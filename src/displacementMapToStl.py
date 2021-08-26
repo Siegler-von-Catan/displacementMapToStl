@@ -85,9 +85,15 @@ bpy.ops.transform.resize(value=(8, 8, 8), orient_type='GLOBAL', orient_matrix=((
 # create texture with displacement map texture
 texture = bpy.data.textures.new("DisplacementMap", "IMAGE")
 
+
 bpy.ops.image.open(filepath=input_path)
 
-texture.image = bpy.data.images[input_file]
+# We unfortunately can not be sure about the saved name in the collection, as the name can be for example cropped to a certain length.
+# Therefore we just load the first image. For further information read: https://docs.blender.org/api/current/info_gotcha.html under "Data Names"
+image = bpy.data.images.values()[0]
+
+
+texture.image = image
 
 subdividePlane(9)
 
@@ -108,3 +114,4 @@ addBooleanSubstractModifier()
 
 # save result
 bpy.ops.export_mesh.stl(filepath=output_path, use_selection=True)
+
