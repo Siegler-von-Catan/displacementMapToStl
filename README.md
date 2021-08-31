@@ -1,5 +1,5 @@
 # Displacement Map (Height Map) To Stl
-Transforms a displacement map / height map to a 3D model and applies it on a 3D stamp mocel provided as CC BY SA by Cailem042.
+Applies a displacement map / height map to a 3D stamp model provided as CC BY SA by Cailem042, resulting in the height map being the motive of the stamp.
 
 ## Instruction
 You need blender version >= 2.91 
