@@ -74,7 +74,7 @@ argv = argv[argv.index("--") + 1:]  # get all args after "--"
 input_path = argv[0]
 input_file = os.path.basename(input_path)
 output_path = determineOutputPath(input_file, argv[1])
-decimate_factor = 0.069 if len(argv) == 3 else 0.42
+decimate_factor = 0.04 if len(argv) == 3 else 0.42
 
 # add plane to world
 bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, location=(0, -16.7, 0), rotation=(-1.5708, 3.1416, 0))
